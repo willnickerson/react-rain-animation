@@ -1,0 +1,36 @@
+{
+  "name": "react-rain-animation",
+  "version": "1.0.0",
+  "description": "rain animation component",
+  "main": "lib/index.js",
+  "scripts": {
+    "watch": "cross-env NODE_ENV=development webpack -w",
+    "build:dev": "cross-env NODE_ENV=development webpack",
+    "build:production": "cross-env NODE_ENV=production webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willnickerson/react-rain-animation.git"
+  },
+  "author": "Will Nickerson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willnickerson/react-rain-animation/issues"
+  },
+  "homepage": "https://github.com/willnickerson/react-rain-animation#readme",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.5.1"
+  },
+  "peerDependency": {
+    "highlight.js": "^9.11.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
