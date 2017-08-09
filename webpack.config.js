@@ -25,7 +25,12 @@ const WebpackConfig = {
         options: {
           presets: ['env', 'react']
         }
-      }
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader'],
+      },
     ],
   },
 
