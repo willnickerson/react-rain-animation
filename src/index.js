@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../lib/style.css';
 
 class Rain extends Component {
@@ -6,9 +7,10 @@ class Rain extends Component {
     super(props);
 
     this.state = {
-      numDrops: 250
+      numDrops: this.props.numdrops || 450
     };
   }
+
 
   startRain() {
     const rainSection = document.getElementById('Rain');
@@ -41,6 +43,15 @@ class Rain extends Component {
     return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
   }
 
+  handleChange(newValue) {
+    this.setState({numDrops: newValue});
+  };
+
+  onChangeEnd() {
+    this.stopRain();
+    this.startRain();
+  } 
+
   componentDidMount() {
     this.startRain();
   }
@@ -51,5 +62,9 @@ class Rain extends Component {
     );
   }
 }
+
+Rain.propTypes = {
+  numDrops: PropTypes.number
+};
 
 export default Rain;
