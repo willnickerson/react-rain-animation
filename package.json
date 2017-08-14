@@ -1,6 +1,6 @@
 {
   "name": "react-rain-animation",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "rain animation component",
   "main": "lib/index.js",
   "scripts": {
