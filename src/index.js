@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../lib/style.css';
 
 class Rain extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      numDrops: this.props.numdrops || 450
-    };
-  }
-
-
   startRain() {
     const rainSection = document.getElementById('Rain');
 
-    for(let i = 1; i < this.state.numDrops; i++) {
+    for(let i = 1; i < this.props.numDrops; i++) {
       const dropLeft = this.randRange(0, 1600);
       const dropTop = this.randRange(-1000, 1400);
 
@@ -31,6 +21,13 @@ class Rain extends Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if(this.props.numDrops !== prevProps.numDrops) {
+      this.stopRain();
+      this.startRain()
+    }
+  }
+
   stopRain() {
     const rainSection = document.getElementById('Rain');
 
@@ -42,15 +39,6 @@ class Rain extends Component {
   randRange(minNum, maxNum) {
     return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
   }
-
-  handleChange(newValue) {
-    this.setState({numDrops: newValue});
-  };
-
-  onChangeEnd() {
-    this.stopRain();
-    this.startRain();
-  } 
 
   componentDidMount() {
     this.startRain();
@@ -64,7 +52,7 @@ class Rain extends Component {
 }
 
 Rain.propTypes = {
-  numDrops: PropTypes.number
+  numDrops: PropTypes.number.isRequired
 };
 
 export default Rain;
