@@ -1,5 +1,5 @@
 # react-rain-animation
-A stateful rain animation component for your react project. No SVG animations no jQuery, no additional dependencies.
+A stateful rain animation component for your react project. No SVG animations no jQuery, no additional dependencies. Addapted from raichu26's [codepen](https://codepen.io/alemesre/pen/hAxGg?q=css%20rain&limit=all&order=popularity&depth=everything&show_forks=false). Live demo [here](https://willnickerson.github.io/react-rain-demo)
 
 
 ## Installation
